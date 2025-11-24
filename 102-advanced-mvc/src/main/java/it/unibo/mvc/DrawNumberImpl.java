@@ -1,5 +1,6 @@
 package it.unibo.mvc;
 
+import java.io.IOException;
 import java.util.Random;
 
 /**
@@ -15,12 +16,13 @@ public final class DrawNumberImpl implements DrawNumber {
     private final Random random = new Random();
 
     /**
+     * @throws IOException 
      * @throws IllegalStateException if the configuration is not consistent
      */
-    public DrawNumberImpl(final int min, final int max, final int attempts) {
+    public DrawNumberImpl(final int min, final int max, final int attemps) throws IOException {
         this.min = min;
         this.max = max;
-        this.attempts = attempts;
+        this.attempts = attemps;
         this.reset();
     }
 
